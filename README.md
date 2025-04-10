@@ -68,5 +68,3 @@ mon-projet/
 
 - **Extension** : Ajout possible d’une route `POST /quotes` pour créer de nouvelles citations.
 - **Interface Améliorée** : Bouton **"Nouvelle citation"** dans le frontend pour rafraîchir dynamiquement l’affichage.
-
-```
