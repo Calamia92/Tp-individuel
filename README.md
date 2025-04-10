@@ -22,9 +22,9 @@ mon-projet/
 │   │   └── index.html
 │   ├── src/
 │   │   ├── App.js
-│   │   ├── App.css         // (style minimal)
+│   │   ├── App.css         
 │   │   ├── index.js
-│   │   └── index.css       // (style minimal)
+│   │   └── index.css      
 │   ├── package.json
 │   └── Dockerfile
 └── docker-compose.yml
