@@ -1,5 +1,3 @@
-
-```markdown
 # TP Individuel Docker - Docker Compose
 
 ## Description
@@ -13,24 +11,10 @@ L'ensemble de l'application est conteneurisé et orchestré à l'aide de Docker 
 
 ## Structure du Projet
 
-```
-mon-projet/
-├── backend/
-│   ├── app.js
-│   ├── package.json
-│   └── Dockerfile
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── App.css         // (style minimal)
-│   │   ├── index.js
-│   │   └── index.css       // (style minimal)
-│   ├── package.json
-│   └── Dockerfile
-└── docker-compose.yml
-```
+mon-projet/ ├── backend/ │ ├── app.js │ ├── package.json │ └── Dockerfile ├── frontend/ │ ├── public/ │ │ └── index.html │ ├── src/ │ │ ├── App.js │ │ ├── App.css // (style minimal) │ │ ├── index.js │ │ └── index.css // (style minimal) │ ├── package.json │ └── Dockerfile └── docker-compose.yml
+
+markdown
+Copier
 
 ## Installation et Exécution
 
@@ -42,31 +26,34 @@ mon-projet/
    Dans le répertoire racine du projet, exécute la commande suivante :
    ```bash
    docker-compose up --build
-   ```
-   - Le backend sera accessible via [http://localhost:5000](http://localhost:5000).
-   - Le frontend sera accessible via [http://localhost:3000](http://localhost:3000).
+Le backend sera accessible via http://localhost:5000.
 
-3. **Utilisation :**  
-   - La page d'accueil affiche une citation.
-   - En cliquant sur le bouton **"Nouvelle citation"**, une nouvelle citation est récupérée auprès du backend via un proxy.
+Le frontend sera accessible via http://localhost:3000.
 
-## Questions de Réflexion (Réponses Courtes)
+Utilisation :
 
-1. **Dockerfile vs docker-compose.yml**  
-   - *Réponse :* Le Dockerfile sert à construire une image, tandis que le fichier docker-compose.yml orchestre plusieurs conteneurs.
+La page d'accueil affiche une citation.
 
-2. **Avantages de séparer les services**  
-   - *Réponse :* Cela permet une meilleure isolation, une scalabilité accrue et une maintenance indépendante.
+En cliquant sur le bouton "Nouvelle citation", une nouvelle citation est récupérée auprès du backend via un proxy.
 
-3. **Docker Compose et travail en équipe**  
-   - *Réponse :* Docker Compose uniformise l'environnement de développement et simplifie le déploiement en équipe.
+Questions de Réflexion (Réponses Courtes)
+Dockerfile vs docker-compose.yml
 
-4. **Utilité de publier sur Docker Hub**  
-   - *Réponse :* Publier sur Docker Hub facilite le partage, la sauvegarde et la portabilité des conteneurs.
+Réponse : Le Dockerfile sert à construire une image, tandis que le fichier docker-compose.yml orchestre plusieurs conteneurs.
 
-## Bonus
+Avantages de séparer les services
 
-- **Extension** : Possibilité d'ajouter une route `POST /quotes` pour permettre la création de nouvelles citations.
-- **Interface** : Ajout d'un bouton **"Nouvelle citation"** sur le frontend pour rafraîchir dynamiquement l'affichage.
+Réponse : Cela permet une meilleure isolation, une scalabilité accrue et une maintenance indépendante.
 
-```
+Docker Compose et travail en équipe
+
+Réponse : Docker Compose uniformise l'environnement de développement et simplifie le déploiement en équipe.
+
+Utilité de publier sur Docker Hub
+
+Réponse : Publier sur Docker Hub facilite le partage, la sauvegarde et la portabilité des conteneurs.
+
+Bonus
+Extension : Possibilité d'ajouter une route POST /quotes pour permettre la création de nouvelles citations.
+
+Interface : Ajout d'un bouton "Nouvelle citation" sur le frontend pour rafraîchir dynamiquement l'affichage.
