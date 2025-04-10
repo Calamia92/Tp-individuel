@@ -1,0 +1,66 @@
+```markdown
+# TP Individuel Docker - Docker Compose
+
+## Description
+
+Ce projet est une application web complète composée d'une API Node.js (backend) et d'une interface React (frontend).
+L'API fournit, via `/quotes`, une citation aléatoire parmi trois définies dans le code.
+Le tout est conteneurisé et orchestré avec Docker Compose.
+
+## Structure du Projet
+
+```
+mon-projet/
+├── backend/
+│   ├── app.js
+│   ├── package.json
+│   └── Dockerfile
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── App.css         // (style minimal)
+│   │   ├── index.js
+│   │   └── index.css       // (style minimal)
+│   ├── package.json
+│   └── Dockerfile
+└── docker-compose.yml
+```
+
+## Installation et Exécution
+
+1. **Prérequis :**
+   - Installer [Docker Desktop](https://www.docker.com/products/docker-desktop).
+   - Docker Compose est inclus avec Docker Desktop.
+
+2. **Lancer le Projet :**
+   Dans la racine du projet, exécute :
+   ```bash
+   docker-compose up --build
+   ```
+   - Le backend sera accessible sur `http://localhost:5000`.
+   - Le frontend sur `http://localhost:3000`.
+
+3. **Utilisation :**
+   - La page affiche une citation.
+   - En cliquant sur "Nouvelle citation", une nouvelle citation est demandée au backend via le proxy.
+
+## Questions de Réflexion (Réponses très courtes)
+
+1. **Dockerfile vs docker-compose.yml**
+   - *Réponse :* Le Dockerfile construit une image, docker-compose orchestre plusieurs conteneurs.
+
+2. **Avantages de séparer les services**
+   - *Réponse :* Isolation, scalabilité et maintenance indépendante.
+
+3. **Docker Compose et travail en équipe**
+   - *Réponse :* Uniformise l'environnement et simplifie le déploiement.
+
+4. **Utilité de publier sur Docker Hub**
+   - *Réponse :* Partage, sauvegarde et portabilité.
+
+## Bonus
+
+- Possibilité d'ajouter une route `POST /quotes` pour créer de nouvelles citations.
+- Bouton "Nouvelle citation" sur le frontend pour rafraîchir l'affichage.
