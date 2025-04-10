@@ -1,4 +1,3 @@
-```markdown
 # TP Individuel Docker - Docker Compose
 
 ## Description
