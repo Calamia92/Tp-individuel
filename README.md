@@ -36,7 +36,7 @@ La page d'accueil affiche une citation.
 
 En cliquant sur le bouton "Nouvelle citation", une nouvelle citation est récupérée auprès du backend via un proxy.
 
-Questions de Réflexion (Réponses Courtes)
+Questions de Réflexion
 Dockerfile vs docker-compose.yml
 
 Réponse : Le Dockerfile sert à construire une image, tandis que le fichier docker-compose.yml orchestre plusieurs conteneurs.
