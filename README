@@ -1,4 +1,3 @@
-```markdown
 # TP Individuel Docker - Docker Compose
 
 ## Description
@@ -64,5 +63,3 @@ mon-projet/
 
 - Possibilité d'ajouter une route `POST /quotes` pour créer de nouvelles citations.
 - Bouton "Nouvelle citation" sur le frontend pour rafraîchir l'affichage.
-
-```
