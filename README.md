@@ -1,59 +1,75 @@
+```markdown
 # TP Individuel Docker - Docker Compose
 
 ## Description
 
-Ce projet présente une application web complète composée de deux parties principales :
+Ce projet présente une application web complète composée de deux parties :
 
-- **Backend** : Une API Node.js qui expose la route **`/quotes`** retournant aléatoirement l'une des trois citations prédéfinies.
-- **Frontend** : Une interface réalisée avec React.
+- **Backend** : Une API Node.js qui expose la route **`/quotes`** pour renvoyer aléatoirement l'une des trois citations prédéfinies.
+- **Frontend** : Une interface utilisateur développée avec React.
 
-L'ensemble de l'application est conteneurisé et orchestré à l'aide de Docker Compose.
+L’ensemble de l’application est conteneurisé et orchestré avec Docker Compose.
 
 ## Structure du Projet
 
-mon-projet/ ├── backend/ │ ├── app.js │ ├── package.json │ └── Dockerfile ├── frontend/ │ ├── public/ │ │ └── index.html │ ├── src/ │ │ ├── App.js │ │ ├── App.css // (style minimal) │ │ ├── index.js │ │ └── index.css // (style minimal) │ ├── package.json │ └── Dockerfile └── docker-compose.yml
-
-markdown
-Copier
+```plaintext
+mon-projet/
+├── backend/
+│   ├── app.js
+│   ├── package.json
+│   └── Dockerfile
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── App.css         // (style minimal)
+│   │   ├── index.js
+│   │   └── index.css       // (style minimal)
+│   ├── package.json
+│   └── Dockerfile
+└── docker-compose.yml
+```
 
 ## Installation et Exécution
 
-1. **Prérequis :**  
-   - Télécharger et installer [Docker Desktop](https://www.docker.com/products/docker-desktop).  
-   - Docker Compose est inclus avec Docker Desktop.
+1. **Prérequis**  
+   - Installe [Docker Desktop](https://www.docker.com/products/docker-desktop) (Docker Compose est inclus).
 
-2. **Lancement du Projet :**  
-   Dans le répertoire racine du projet, exécute la commande suivante :
+2. **Démarrage du Projet**  
+   Dans le répertoire racine, exécute la commande suivante :
+
    ```bash
    docker-compose up --build
-Le backend sera accessible via http://localhost:5000.
+   ```
 
-Le frontend sera accessible via http://localhost:3000.
+   - **Backend** : Accessible sur [http://localhost:5000](http://localhost:5000)
+   - **Frontend** : Accessible sur [http://localhost:3000](http://localhost:3000)
 
-Utilisation :
+3. **Utilisation**  
+   - La page d'accueil affiche une citation.
+   - Cliquez sur **"Nouvelle citation"** pour rafraîchir l'affichage et obtenir une citation aléatoire via l'API.
 
-La page d'accueil affiche une citation.
+## Questions de Réflexion
 
-En cliquant sur le bouton "Nouvelle citation", une nouvelle citation est récupérée auprès du backend via un proxy.
+1. **Dockerfile vs docker-compose.yml**  
+   *Réponse* : Le `Dockerfile` permet de construire une image, tandis que `docker-compose.yml` orchestre plusieurs conteneurs.
 
-Questions de Réflexion
-Dockerfile vs docker-compose.yml
+2. **Avantages de Séparer les Services**  
+   *Réponse* : Une séparation qui facilite l’isolation, la scalabilité et la maintenance indépendante de chaque service.
 
-Réponse : Le Dockerfile sert à construire une image, tandis que le fichier docker-compose.yml orchestre plusieurs conteneurs.
+3. **Docker Compose et Travail en Équipe**  
+   *Réponse* : Il uniformise l’environnement de développement et simplifie le déploiement collaboratif.
 
-Avantages de séparer les services
+4. **Utilité de Publier sur Docker Hub**  
+   *Réponse* : Cela offre une solution de partage, de sauvegarde et de portabilité des images.
 
-Réponse : Cela permet une meilleure isolation, une scalabilité accrue et une maintenance indépendante.
+## Bonus
 
-Docker Compose et travail en équipe
+- **Extension** : Ajout possible d’une route `POST /quotes` pour créer de nouvelles citations.
+- **Interface Améliorée** : Bouton **"Nouvelle citation"** dans le frontend pour rafraîchir dynamiquement l’affichage.
 
-Réponse : Docker Compose uniformise l'environnement de développement et simplifie le déploiement en équipe.
+---
 
-Utilité de publier sur Docker Hub
+``` 
 
-Réponse : Publier sur Docker Hub facilite le partage, la sauvegarde et la portabilité des conteneurs.
-
-Bonus
-Extension : Possibilité d'ajouter une route POST /quotes pour permettre la création de nouvelles citations.
-
-Interface : Ajout d'un bouton "Nouvelle citation" sur le frontend pour rafraîchir dynamiquement l'affichage.
