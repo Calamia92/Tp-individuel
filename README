@@ -1,10 +1,15 @@
+
+```markdown
 # TP Individuel Docker - Docker Compose
 
 ## Description
 
-Ce projet est une application web complète composée d'une API Node.js (backend) et d'une interface React (frontend).  
-L'API fournit, via `/quotes`, une citation aléatoire parmi trois définies dans le code.  
-Le tout est conteneurisé et orchestré avec Docker Compose.
+Ce projet présente une application web complète composée de deux parties principales :
+
+- **Backend** : Une API Node.js qui expose la route **`/quotes`** retournant aléatoirement l'une des trois citations prédéfinies.
+- **Frontend** : Une interface réalisée avec React.
+
+L'ensemble de l'application est conteneurisé et orchestré à l'aide de Docker Compose.
 
 ## Structure du Projet
 
@@ -30,36 +35,38 @@ mon-projet/
 ## Installation et Exécution
 
 1. **Prérequis :**  
-   - Installer [Docker Desktop](https://www.docker.com/products/docker-desktop).
+   - Télécharger et installer [Docker Desktop](https://www.docker.com/products/docker-desktop).  
    - Docker Compose est inclus avec Docker Desktop.
 
-2. **Lancer le Projet :**  
-   Dans la racine du projet, exécute :
+2. **Lancement du Projet :**  
+   Dans le répertoire racine du projet, exécute la commande suivante :
    ```bash
    docker-compose up --build
    ```
-   - Le backend sera accessible sur `http://localhost:5000`.
-   - Le frontend sur `http://localhost:3000`.
+   - Le backend sera accessible via [http://localhost:5000](http://localhost:5000).
+   - Le frontend sera accessible via [http://localhost:3000](http://localhost:3000).
 
 3. **Utilisation :**  
-   - La page affiche une citation.
-   - En cliquant sur "Nouvelle citation", une nouvelle citation est demandée au backend via le proxy.
+   - La page d'accueil affiche une citation.
+   - En cliquant sur le bouton **"Nouvelle citation"**, une nouvelle citation est récupérée auprès du backend via un proxy.
 
-## Questions de Réflexion (Réponses très courtes)
+## Questions de Réflexion (Réponses Courtes)
 
 1. **Dockerfile vs docker-compose.yml**  
-   - *Réponse :* Le Dockerfile construit une image, docker-compose orchestre plusieurs conteneurs.
+   - *Réponse :* Le Dockerfile sert à construire une image, tandis que le fichier docker-compose.yml orchestre plusieurs conteneurs.
 
 2. **Avantages de séparer les services**  
-   - *Réponse :* Isolation, scalabilité et maintenance indépendante.
+   - *Réponse :* Cela permet une meilleure isolation, une scalabilité accrue et une maintenance indépendante.
 
 3. **Docker Compose et travail en équipe**  
-   - *Réponse :* Uniformise l'environnement et simplifie le déploiement.
+   - *Réponse :* Docker Compose uniformise l'environnement de développement et simplifie le déploiement en équipe.
 
 4. **Utilité de publier sur Docker Hub**  
-   - *Réponse :* Partage, sauvegarde et portabilité.
+   - *Réponse :* Publier sur Docker Hub facilite le partage, la sauvegarde et la portabilité des conteneurs.
 
 ## Bonus
 
-- Possibilité d'ajouter une route `POST /quotes` pour créer de nouvelles citations.
-- Bouton "Nouvelle citation" sur le frontend pour rafraîchir l'affichage.
+- **Extension** : Possibilité d'ajouter une route `POST /quotes` pour permettre la création de nouvelles citations.
+- **Interface** : Ajout d'un bouton **"Nouvelle citation"** sur le frontend pour rafraîchir dynamiquement l'affichage.
+
+```
